@@ -144,20 +144,14 @@
     transition: all 0.2s ease, visibility 0s;
     border-radius: 10px;
     font-weight: 800;
+    cursor: pointer;
     font-family: "MyWebFont" !important;
     font-size: 24px !important;
     letter-spacing: 3.5px;
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff !important;
     color: #fff;
+    border: 1px solid #fff;
     background-color: rgba(0, 0, 0, 0.75) !important;
-    box-shadow: -0.15px 8px 0 -2px rgb(171 149 63 / 0%);
-    /* border-radius: 20px !important;
-    font-size: 18px !important;
-    padding: 8px 20px !important;
-    background-color: #6f29a5 !important;
-    font-family: "Source Sans Pro" !important;
-    font-weight: 600 !important;
-    color: white !important; */
 }
 
 .mint-btn {
@@ -453,12 +447,13 @@
     align-items: center;
     cursor: pointer;
     transition: all 0.2s ease, visibility 0s;
-    border-radius: 10px;
+    border-radius: 4px;
     font-weight: 800;
+    cursor: pointer;
     font-family: "MyWebFont";
     font-size: 24px;
     letter-spacing: 3.5px;
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff !important;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.75);
     box-shadow: -0.15px 8px 0 -2px rgb(171 149 63 / 0%);
