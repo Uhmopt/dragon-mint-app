@@ -1,4 +1,4 @@
-import { Button, CircularProgress } from "@material-ui/core";
+import { CircularProgress } from "@material-ui/core";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -29,9 +29,9 @@ const ConnectButton = styled(WalletDialogButton)``;
 
 const CounterText = styled.span``; // add your styles here
 
-const MintContainer = styled.div``; // add your styles here
+// const MintContainer = styled.div``; // add your styles here
 
-const MintButton = styled(Button)``; // add your styles here
+// const MintButton = styled(Button)``; // add your styles here
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
@@ -48,7 +48,7 @@ const Home = (props: HomeProps) => {
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
-  const [mintValue, setMintValue] = useState(1);
+  const [mintValue] = useState(1);
 
   const [alertState, setAlertState] = useState<AlertState>({
     open: false,
@@ -142,6 +142,7 @@ const Home = (props: HomeProps) => {
         await getNFTAmount();
       }
     })();
+    // eslint-disable-next-line
   }, [wallet, props.connection]);
 
   useEffect(() => {
@@ -214,35 +215,6 @@ const Home = (props: HomeProps) => {
     setIsSoldOut(itemsRemaining === 0);
   };
 
-  const mintRange = [
-    {
-      value: 0,
-      label: "1",
-    },
-    {
-      value: 25,
-      label: "2",
-    },
-    {
-      value: 50,
-      label: "3",
-    },
-    {
-      value: 75,
-      label: "4",
-    },
-    {
-      value: 100,
-      label: "5",
-    },
-  ];
-
-  const onSliderValueChange = (event: any, newValue: any) => {
-    let toMintValue =
-      Math.floor(newValue / 25) == 0 ? 1 : Math.floor(newValue / 25) + 1;
-    setMintValue(toMintValue);
-  };
-
   return (
     <div className="page-container">
       <div className="page-bg"></div>
@@ -250,7 +222,7 @@ const Home = (props: HomeProps) => {
         <div className="content">
           <div className="mint-img-address">
             <div className="mint-img">
-              <img src={MintImg} alt="mint dragon image" />
+              <img src={MintImg} alt="hero_image" />
               {!wallet.connected ? (
                 <ConnectButton className="connect-wallet-btn">
                   Connect Wallet
@@ -488,10 +460,7 @@ const Home = (props: HomeProps) => {
             </div>
           </div>
         </div> */}
-        {/* <MintSection /> */}
       </section>
-
-      {/* <Background /> */}
 
       <Dialog
         className="messageContainer"
